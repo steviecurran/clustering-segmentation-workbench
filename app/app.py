@@ -594,22 +594,9 @@ kmeans_model, cluster_ids = fit_kmeans(X, n_clusters)
 clustered_numeric = data.copy()
 clustered_numeric["Cluster"] = cluster_ids
 
-if (
-    source == "Built-in example"
-    and example_name == "Customer segmentation"
-    and n_clusters == 4
-):
-    default_cluster_names = {
-        0: "well off",
-        1: "fewer opportunities",
-        2: "standard",
-        3: "career focused",
-    }
-else:
-    default_cluster_names = {
-        cluster: f"Cluster {cluster}"
-        for cluster in range(n_clusters)
-    }
+
+default_cluster_names = {cluster: f"Cluster {cluster}" for cluster in range(n_clusters)
+}
 
 # Read current labels from session state before drawing the K-means plot.
 # The text widgets themselves are placed directly below that plot.
