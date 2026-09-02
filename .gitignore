@@ -1,0 +1,10 @@
+.venv/
+.DS_Store
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+*~
+\#*\#
+*-safe.py
+plan.txt
+data/customer-segmentation.csv
