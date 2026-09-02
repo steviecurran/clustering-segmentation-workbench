@@ -533,10 +533,6 @@ if len(numeric_columns) < 2:
 
 st.sidebar.header("Analysis settings")
 
-default_cluster_names = {
-    cluster: f"Cluster {cluster}"
-    for cluster in range(n_clusters)
-}
 
 features = st.sidebar.multiselect(
     "Numeric features",
