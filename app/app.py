@@ -531,6 +531,9 @@ if len(numeric_columns) < 2:
     )
     st.stop()
 
+
+default_features = sensible_default_features(raw_df)
+
 st.sidebar.header("Analysis settings")
 
 
