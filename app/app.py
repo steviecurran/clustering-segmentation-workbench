@@ -533,17 +533,10 @@ if len(numeric_columns) < 2:
 
 st.sidebar.header("Analysis settings")
 
-if (
-    source == "Built-in example"
-    and example_name == "Customer segmentation"
-):
-    # Preserve the original notebook demo exactly: all numeric columns,
-    # including ID, were part of the clustering/PCA feature matrix.
-    default_features = numeric_columns
-else:
-    # For arbitrary external datasets, avoid allowing an identifier to
-    # influence distances unless the user deliberately selects it.
-    default_features = sensible_default_features(raw_df)
+default_cluster_names = {
+    cluster: f"Cluster {cluster}"
+    for cluster in range(n_clusters)
+}
 
 features = st.sidebar.multiselect(
     "Numeric features",
